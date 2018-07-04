@@ -24,6 +24,7 @@ public class HelloServiceConsumer {
 
 			} catch (Throwable throwable) {
 				throwable.printStackTrace();
+				context.close();
 			}
 		}
 	}
