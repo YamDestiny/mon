@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>xyz.yamdestiny</groupId>
@@ -27,9 +28,10 @@
 		<junit.version>4.12</junit.version>
 		<!-- Project -->
 		<spring.version>4.3.10.RELEASE</spring.version>
-		<dubbo.version>2.5.10</dubbo.version>
+		<dubbo.version>2.6.2</dubbo.version>
 		<zookeeper.version>3.4.9</zookeeper.version>
-		<zkclient.version>0.1</zkclient.version>
+		<zkclient.version>0.2</zkclient.version>
+		<curator.version>2.12.0</curator.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<log4j.version>1.2.16</log4j.version>
 	</properties>
@@ -106,23 +108,14 @@
 
 		<!-- ZooKeeper Client -->
 		<dependency>
-			<groupId>com.github.sgroschupf</groupId>
+			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
 			<version>${zkclient.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j</artifactId>
-					<groupId>log4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>slf4j-log4j12</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-framework</artifactId>
+			<version>${curator.version}</version>
 		</dependency>
 
 		<!-- Log -->
